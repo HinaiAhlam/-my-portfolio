@@ -1,0 +1,36 @@
+<div class="container mt-4 p-4 border rounded bg-light shadow-sm">
+  
+  <div class="mb-4">
+    <p *ngIf="isLoggedIn" class="text-success fs-4 fw-bold">
+        Welcome back, {{ studentName }}!
+    </p>
+    <p *ngIf="!isLoggedIn" class="text-danger fs-4 fw-bold">
+        Please log in.
+    </p>
+    <button (click)="toggleLogin()" class="btn btn-dark btn-sm">Toggle Login</button>
+  </div>
+
+  <hr>
+
+  <div class="mb-4">
+    <h5 class="text-secondary">User Role Status:</h5>
+    <div [ngSwitch]="userRole">
+      <span *ngSwitchCase="'admin'" class="badge bg-danger p-2 fs-6">🔴 Admin Panel</span>
+      <span *ngSwitchCase="'editor'" class="badge bg-warning text-dark p-2 fs-6">🟡 Editor Access</span>
+      <span *ngSwitchCase="'viewer'" class="badge bg-success p-2 fs-6">🟢 View Only</span>
+      <span *ngSwitchDefault class="badge bg-secondary p-2 fs-6">⚪ Unknown Role</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="mt-4">
+    <h3 class="text-primary mb-3">My Skills</h3>
+    <ul class="list-group w-50">
+      <li *ngFor="let skill of skills; let i = index" class="list-group-item">
+        <span class="fw-bold text-muted">{{ i + 1 }}.</span> {{ skill }}
+      </li>
+    </ul>
+  </div>
+
+</div>
