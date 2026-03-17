@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Product Inventory</h2>
+  <table class="table table-bordered table-striped shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th>Order</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>
+          <span [class]="product.used ? 'text-danger' : 'text-success'">
+            {{ product.used ? 'Used' : 'New' }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

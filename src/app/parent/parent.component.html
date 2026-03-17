@@ -1,0 +1,14 @@
+<div class="container mt-5 p-4 border rounded bg-light shadow">
+  <h3 class="text-dark">Parent Component (الأب)</h3>
+  
+  <div class="alert alert-info mt-2">
+    <strong>Received from Child:</strong> {{ receivedData }}
+  </div>
+
+  <hr>
+
+  <app-child 
+    [data]="message" 
+    (send)="onReceive($event)">
+  </app-child>
+</div>

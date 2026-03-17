@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router'; // استيراد الـ Routing
+import { RouterModule, Routes } from '@angular/router'; 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
-// إعداد المسارات (Routes Configuration)
 const routes: Routes = [
-  { path: '', component: HomeComponent },         // الصفحة الرئيسية (المسار الفارغ)
-  { path: 'profile', component: ProfileComponent } // صفحة الملف الشخصي
+  { path: '', component: HomeComponent },           
+  { path: 'profile', component: ProfileComponent },
+  { path: 'about', component: AboutComponent }   
 ];
 
 @NgModule({
@@ -18,11 +21,14 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes) // تفعيل نظام التوجيه
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

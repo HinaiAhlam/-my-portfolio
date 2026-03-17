@@ -1,0 +1,10 @@
+<div class="border p-3 bg-white mt-3 shadow-sm">
+  <h5 class="text-primary">Child Component (الابن)</h5>
+  
+  <p>Message from Parent: <strong>{{ data }}</strong></p>
+
+  <div class="mt-2">
+    <label>Type to send to Parent:</label>
+    <input (input)="sendDataToParent($event)" class="form-control" placeholder="Write here...">
+  </div>
+</div>
